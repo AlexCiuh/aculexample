@@ -143,11 +143,9 @@ button:hover {
   stroke: currentColor;
 }
 
-/* ... Rest of the existing CSS ... */
 
-/* Please continue adding your existing CSS styles here */
 
-/* ... */
+/* css stil */
 
 .footer {
   position: relative;
@@ -266,11 +264,9 @@ button:hover {
   }
 }
 
-/* Add any additional styling if needed */
+/* addonuri pentru dizain */
 
-/* Your existing CSS... */
 
-/* Add the following styles for the burger menu */
 .burger-menu {
   display: none;
   cursor: pointer;
@@ -285,7 +281,7 @@ button:hover {
   transition: 0.4s;
 }
 
-/* Adjustments for smaller screens */
+/* deviceurile */
 @media only screen and (max-width: 768px) {
   .navbar {
       width: 100%;

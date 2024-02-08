@@ -1,193 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../pages/pages.css">
-  <link rel="icon" href="images/free-icon-moldova-5204752.png" />
-  <title>Istoria</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    /* stilurile de navbar */
-    .navbar {
-      position: absolute;
-      top: 0;
-      left: 0;
- 
-
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px;
-    }
-
-    .navbar .logo {
-      display: block;
-      cursor: pointer;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-    }
-
-    .navbar ul li {
-      margin: 0 20px;
-    }
-
-    .navbar ul li a {
-      text-decoration: none;
-      color: #fff;
-      text-transform: uppercase;
-    }
-
-    /* Стили для десктопа */
-    @media screen and (min-width: 768px) {
-      .burger-menu {
-        display: none;
-      }
-
-      .navbar ul {
-        display: flex;
-      }
-    }
-
-    /* stil pentru mobilele cu 767 pixeli */
-    @media screen and (max-width: 767px) {
-      .navbar ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        z-index: 1000;
-      }
-
-      .navbar ul.show {
-        display: flex;
-      }
-
-      .navbar ul li {
-        margin: 10px 0;
-      }
-
-      .burger-menu {
-        display: block;
-        cursor: pointer;
-      }
-
-      .burger-menu .bar {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 6px 0;
-      }
-    }
-
-    /* stilurile secundare */
-    .banner {
-      position: relative;
-    }
-
-    .content {
-      width: 100%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #fff;
-      padding: 20px;
-    }
-
-    .content h1 {
-      font-size: 40px;
-      margin-top: 40px;
-    }
-
-    .content p {
-      margin: 20px auto;
-      font-weight: 100;
-      line-height: 25px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="icon" href="images/free-icon-moldova-5204752.png"/>
+    <title>Arta traditionala</title>
 </head>
-
 <body>
 
-  <div class="banner">
+<div class="banner">
     <div class="navbar">
-      <div id="results"></div>
-      <img src="../images/IMG-39b918a81de3ed895cca0aed020e3c88-V.jpg" class="logo">
-      <ul>
-        <li><a href="../index.html">ACASA</a></li>
-        <li><a href="despre.html">DESPRE</a></li>
-        <li><a href="istoric.html">ISTORIC</a></li>
-        <li><a href="contacte.html">CONTACTE</a></li>
-      </ul>
-      <!-- menu icon pentru dispozitive mobile 780 si mai mici pixeli -->
-      <div class="burger-menu" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+        <div id="results"></div>
+        <img src="../images/IMG-39b918a81de3ed895cca0aed020e3c88-V.jpg" class="logo">
+        <ul>
+            <li><a href="../index.html">ACASA</a></li>
+            <li><a href="despre.html">DESPRE</a></li>
+            <li><a href="istoric.html">ISTORIC</a></li>
+            <li><a href="contacte.html">CONTACTE</a></li>
+        </ul>
+        <!-- menu pentru deviceuri!!!!!!!!!! -->
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </div>
+
     <div class="content">
-      <h1>Istoria Proiectului</h1>
-      <p>Istoria proiectului a început în 2019 în comuna Fîrlădeni, raionul Căușeni. De la început, proiectul a fost axat pe arta croitoriei, beneficiind de sprijinul conducerii Școlii Satului și a Liceului Teoretic "Mihail Sadoveanu".
+        <h1>Istoria</h1>
+        <h2>Istoria proiectului a început în 2019 în comuna Fîrlădeni, raionul Căușeni. De la început, proiectul a fost axat pe arta croitoriei, beneficiind de sprijinul conducerii Școlii Satului și a Liceului Teoretic "Mihail Sadoveanu".
 
         Inițial, ideea s-a conturat ca o oportunitate de a dezvolta abilitățile practice ale elevilor în domeniul croitoriei, oferindu-le o perspectivă practică și aplicată a cunoștințelor teoretice. Cu sprijinul Directorului Școlii Satului și a echipelor didactice, proiectul a luat amploare, implicând elevi de diferite vârste și niveluri de experiență.
-        
-        Pe parcursul anilor, proiectul și-a extins sfera de acțiune, aducând în atenția comunității ateliere de croitorie, prezentări și evenimente dedicate artei textile. Participarea la diverse competiții și expoziții a consolidat angajamentul comunității față de proiect, evidențiind rezultatele remarcabile obținute de participanți.
-        
-        Eforturile continue și susținerea comunității au transformat proiectul de croitorie într-o inițiativă durabilă, cu impact pozitiv asupra dezvoltării personale a elevilor și promovării meșteșugului tradițional în rândul tinerilor. Astfel, istoria acestui proiect continuă să scrie capitole frumoase și să contribuie la evoluția educației și a tradițiilor în comuna Fîrlădeni.
-        .</p>
-    </div>
-  </div>
 
-  <footer class="footer">
+        Pe parcursul anilor, proiectul și-a extins sfera de acțiune, aducând în atenția comunității ateliere de croitorie, prezentări și evenimente dedicate artei textile. Participarea la diverse competiții și expoziții a consolidat angajamentul comunității față de proiect, evidențiind rezultatele remarcabile obținute de participanți.
+
+        Eforturile continue și susținerea comunității au transformat proiectul de croitorie într-o inițiativă durabilă, cu impact pozitiv asupra dezvoltării personale a elevilor și promovării meșteșugului tradițional în rândul tinerilor. Astfel, istoria acestui proiect continuă să scrie capitole frumoase și să contribuie la evoluția educației și a tradițiilor în comuna Fîrlădeni.</h2>
+    </div>
+</div>
+
+<footer class="footer">
     <div class="waves">
-      <div class="wave" id="wave1"></div>
-      <div class="wave" id="wave2"></div>
-      <div class="wave" id="wave3"></div>
-      <div class="wave" id="wave4"></div>
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
     </div>
     <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
     </ul>
     <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="#">ACASA</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">DESPRE</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">ISTORIC</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">CONTACTE</a></li>
+        <li class="menu__item"><a class="menu__link" href="../index.html">ACASA</a></li>
+        <li class="menu__item"><a class="menu__link" href="despre.html">DESPRE</a></li>
+        <li class="menu__item"><a class="menu__link" href="istoric.html">ISTORIC</a></li>
+        <li class="menu__item"><a class="menu__link" href="contacte.html">CONTACTE</a></li>
     </ul>
     <p>&copy;2024 MOȘTENIRE CREATIVĂ | Firladeni</p>
-  </footer>
+</footer>
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <script>
+<script>
     function toggleMenu() {
-      var menu = document.querySelector('.navbar ul');
-      menu.classList.toggle('show');
+        var menu = document.querySelector('.navbar ul');
+        menu.classList.toggle('show');
     }
-  </script>
+</script>
 
 </body>
-
 </html>
