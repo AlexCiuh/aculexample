@@ -7,6 +7,120 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="images/free-icon-moldova-5204752.png"/>
     <title>Arta traditionala</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", sans-serif;
+        }
+    
+        /* stilurile de navbar */
+        .navbar {
+          position: absolute;
+          top: 0;
+          left: 0;
+     
+    
+          z-index: 1000;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+        }
+    
+        .navbar .logo {
+          display: block;
+          cursor: pointer;
+        }
+    
+        .navbar ul {
+          list-style: none;
+          display: flex;
+        }
+    
+        .navbar ul li {
+          margin: 0 20px;
+        }
+    
+        .navbar ul li a {
+          text-decoration: none;
+          color: #fff;
+          text-transform: uppercase;
+        }
+    
+        /* Стили для десктопа */
+        @media screen and (min-width: 768px) {
+          .burger-menu {
+            display: none;
+          }
+    
+          .navbar ul {
+            display: flex;
+          }
+        }
+    
+        /* stil pentru mobilele cu 767 pixeli */
+        @media screen and (max-width: 767px) {
+          .navbar ul {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            z-index: 1000;
+          }
+    
+          .navbar ul.show {
+            display: flex;
+          }
+    
+          .navbar ul li {
+            margin: 10px 0;
+          }
+    
+          .burger-menu {
+            display: block;
+            cursor: pointer;
+          }
+    
+          .burger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 6px 0;
+          }
+        }
+    
+        /* stilurile secundare */
+        .banner {
+          position: relative;
+        }
+    
+        .content {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color: #fff;
+          padding: 20px;
+        }
+    
+        .content h1 {
+          font-size: 40px;
+          margin-top: 40px;
+        }
+    
+        .content p {
+          margin: 20px auto;
+          font-weight: 100;
+          line-height: 25px;
+        }
+      </style>
 </head>
 <body>
 
