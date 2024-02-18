@@ -15,18 +15,18 @@
           font-family: "Poppins", sans-serif;
         }
     
-        /* stilurile de navbar */
+        /* Stilurile pentru navbar */
         .navbar {
           position: absolute;
           top: 0;
           left: 0;
-     
-    
           z-index: 1000;
           display: flex;
           justify-content: space-between;
           align-items: center;
           padding: 15px;
+          opacity: 0; /* Initial opacity */
+          animation: fadeInDown 1.5s ease-out forwards;
         }
     
         .navbar .logo {
@@ -49,7 +49,7 @@
           text-transform: uppercase;
         }
     
-        /* Стили для десктопа */
+        /* Stiluri pentru desktop */
         @media screen and (min-width: 768px) {
           .burger-menu {
             display: none;
@@ -60,7 +60,7 @@
           }
         }
     
-        /* stil pentru mobilele cu 767 pixeli */
+        /* Stil pentru mobilele cu 767 pixeli */
         @media screen and (max-width: 767px) {
           .navbar ul {
             display: none;
@@ -94,9 +94,11 @@
           }
         }
     
-        /* stilurile secundare */
+        /* Stilurile pentru banner */
         .banner {
           position: relative;
+          opacity: 0; /* Initial opacity */
+          animation: fadeInUp 1.5s ease-out forwards;
         }
     
         .content {
@@ -110,6 +112,12 @@
           padding: 20px;
         }
     
+        .content h1, .content p, .content button {
+          opacity: 0; /* Initial opacity */
+          animation: fadeInUp 1.5s ease-out forwards;
+          animation-delay: 0.5s; /* Delay for a smoother effect */
+        }
+    
         .content h1 {
           font-size: 40px;
           margin-top: 40px;
@@ -120,25 +128,50 @@
           font-weight: 100;
           line-height: 25px;
         }
-      </style>
+
+        /* Stilurile pentru footer */
+        .footer {
+          opacity: 0; /* Initial opacity */
+          animation: fadeInUp 1.5s ease-out forwards;
+          animation-delay: 1s; /* Delay for a smoother effect */
+        }
+
+        /* Stilurile pentru animatia de fade in */
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <div class="banner">
     <div class="navbar">
-  
-
         <div id="results"></div>
-
         <img src="images/IMG-39b918a81de3ed895cca0aed020e3c88-V.jpg" class="logo">
-
         <ul>
             <li><a href="index.html">ACASA</a></li>
             <li><a href="pages/despre.html">DESPRE</a></li>
             <li><a href="pages/istoric.html">ISTORIC</a></li>
             <li><a href="pages/contacte.html">CONTACTE</a></li>
         </ul>
-
         <!-- Burger Menu Icon -->
         <div class="burger-menu" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -170,10 +203,10 @@
         <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
     </ul>
     <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="index.html">ACASA</a></li>
-        <li class="menu__item"><a class="menu__link" href="../pages/despre.html">DESPRE</a></li>
-        <li class="menu__item"><a class="menu__link" href="../pages/istoric.html">ISTORIC</a></li>
-        <li class="menu__item"><a class="menu__link" href="../pages/contacte.html">CONTACTE</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">ACASA</a></li>
+      <li class="menu__item"><a class="menu__link" href="./pages/despre.html">DESPRE</a></li>
+      <li class="menu__item"><a class="menu__link" href="./pages/istoric.html">ISTORIC</a></li>
+      <li class="menu__item"><a class="menu__link" href="./pages/contacte.html">CONTACTE</a></li>
     </ul>
     <p>&copy;2024 MOȘTENIRE CREATIVĂ | Firladeni</p>
 </footer>
@@ -190,5 +223,3 @@
 
 </body>
 </html>
-
-

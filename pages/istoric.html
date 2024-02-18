@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../pages/pages.css">
+  <link rel="stylesheet" href="pages.css">
   <link rel="icon" href="images/free-icon-moldova-5204752.png" />
   <title>Istoria</title>
   <style>
@@ -17,18 +16,33 @@
       font-family: "Poppins", sans-serif;
     }
 
-    /* stilurile de navbar */
+    body {
+      overflow-x: hidden; /* To hide the horizontal scrollbar caused by the border */
+    }
+
+    /* Style for the center border */
+    .center-border {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100vh;
+      width: 1px; /* Adjust the width as needed */
+      background-color: #000; /* Border color */
+    }
+
+    /* Stilurile de navbar */
     .navbar {
       position: absolute;
       top: 0;
       left: 0;
- 
-
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px;
+      opacity: 0; /* Initial opacity */
+      animation: fadeInDown 1.5s ease-out forwards;
     }
 
     .navbar .logo {
@@ -51,7 +65,7 @@
       text-transform: uppercase;
     }
 
-    /* Стили для десктопа */
+    /* Stiluri pentru desktop */
     @media screen and (min-width: 768px) {
       .burger-menu {
         display: none;
@@ -62,7 +76,7 @@
       }
     }
 
-    /* stil pentru mobilele cu 767 pixeli */
+    /* Stil pentru mobilele cu 767 pixeli */
     @media screen and (max-width: 767px) {
       .navbar ul {
         display: none;
@@ -96,9 +110,11 @@
       }
     }
 
-    /* stilurile secundare */
+    /* Stilurile pentru banner */
     .banner {
       position: relative;
+      opacity: 0; /* Initial opacity */
+      animation: fadeInUp 1.5s ease-out forwards;
     }
 
     .content {
@@ -112,6 +128,14 @@
       padding: 20px;
     }
 
+    .content h1,
+    .content p,
+    .content button {
+      opacity: 0; /* Initial opacity */
+      animation: fadeInUp 1.5s ease-out forwards;
+      animation-delay: 0.5s; /* Delay for a smoother effect */
+    }
+
     .content h1 {
       font-size: 40px;
       margin-top: 40px;
@@ -122,10 +146,58 @@
       font-weight: 100;
       line-height: 25px;
     }
+
+    /* Adding images with hover effect */
+    .content img {
+      width: 100%; /* Make images fill the container */
+      max-width: 400px; /* Adjust as needed */
+      margin: 20px 0;
+      border: 1px solid transparent; /* Reduced border width */
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .content img:hover {
+      transform: scale(1.1);
+      border: 1px solid #fff; /* Border color on hover */
+    }
+
+    /* Stilurile pentru footer */
+    .footer {
+      opacity: 0; /* Initial opacity */
+      animation: fadeInUp 1.5s ease-out forwards;
+      animation-delay: 1s; /* Delay for a smoother effect */
+    }
+
+    /* Stilurile pentru animatia de fade in */
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 
 <body>
+
+  <div class="center-border"></div>
 
   <div class="banner">
     <div class="navbar">
@@ -134,26 +206,25 @@
       <ul>
         <li><a href="../index.html">ACASA</a></li>
         <li><a href="despre.html">DESPRE</a></li>
-        <li><a href="istoric.html">ISTORIC</a></li>
+        <li><a href="#">ISTORIC</a></li>
         <li><a href="contacte.html">CONTACTE</a></li>
       </ul>
-      <!-- menu icon pentru dispozitive mobile 780 si mai mici pixeli -->
+      <!-- Burger Menu Icon -->
       <div class="burger-menu" onclick="toggleMenu()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
     </div>
+    
     <div class="content">
       <h1>Istoria Proiectului</h1>
-      <p>Istoria proiectului a început în 2019 în comuna Fîrlădeni, raionul Căușeni. De la început, proiectul a fost axat pe arta croitoriei, beneficiind de sprijinul conducerii Școlii Satului și a Liceului Teoretic "Mihail Sadoveanu".
-
-        Inițial, ideea s-a conturat ca o oportunitate de a dezvolta abilitățile practice ale elevilor în domeniul croitoriei, oferindu-le o perspectivă practică și aplicată a cunoștințelor teoretice. Cu sprijinul Directorului Școlii Satului și a echipelor didactice, proiectul a luat amploare, implicând elevi de diferite vârste și niveluri de experiență.
-        
-        Pe parcursul anilor, proiectul și-a extins sfera de acțiune, aducând în atenția comunității ateliere de croitorie, prezentări și evenimente dedicate artei textile. Participarea la diverse competiții și expoziții a consolidat angajamentul comunității față de proiect, evidențiind rezultatele remarcabile obținute de participanți.
-        
-        Eforturile continue și susținerea comunității au transformat proiectul de croitorie într-o inițiativă durabilă, cu impact pozitiv asupra dezvoltării personale a elevilor și promovării meșteșugului tradițional în rândul tinerilor. Astfel, istoria acestui proiect continuă să scrie capitole frumoase și să contribuie la evoluția educației și a tradițiilor în comuna Fîrlădeni.
-        .</p>
+      <p>Istoria proiectului a început în 2019 în comuna Fîrlădeni, raionul Căușeni. De la început, proiectul a fost axat pe arta croitoriei, beneficiind de sprijinul conducerii Școlii Satului și a Liceului Teoretic "Mihail Sadoveanu". Inițial, ideea s-a conturat ca o oportunitate de a dezvolta abilitățile practice ale elevilor în domeniul croitoriei, oferindu-le o perspectivă practică și aplicată a cunoștințelor teoretice. Cu sprijinul Directorului Școlii Satului și a echipelor didactice, proiectul a luat amploare, implicând elevi de diferite vârste și niveluri de experiență. Pe parcursul anilor, proiectul și-a extins sfera de acțiune, aducând în atenția comunității ateliere de croitorie, prezentări și evenimente dedicate artei textile. Participarea la diverse competiții și expoziții a consolidat angajamentul comunității față de proiect, evidențiind rezultatele remarcabile obținute de participanți. Eforturile continue și susținerea comunității au transformat proiectul de croitorie într-o inițiativă durabilă, cu impact pozitiv asupra dezvoltării personale a elevilor și promovării meșteșugului tradițional în rândul tinerilor. Astfel, istoria acestui proiect continuă să scrie capitole frumoase și să contribuie la evoluția educației și a tradițiilor în comuna Fîrlădeni. ..</p>
+      <!-- Adding images with hover effect -->
+      <div>
+        <img  src="../images/foto2.webp" style="width: 100%; max-width: 40%;" alt="Image 1">
+        <img src="../images/IMG-0b9aa6078563851c9c1249dbbdf77574-V (1).png" style="width: 100%; max-width: 40%;" alt="Image 2">
+      </div>
     </div>
   </div>
 
@@ -171,10 +242,10 @@
       <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
     </ul>
     <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="#">ACASA</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">DESPRE</a></li>
+      <li class="menu__item"><a class="menu__link" href="../index.html">ACASA</a></li>
+      <li class="menu__item"><a class="menu__link" href="despre.html">DESPRE</a></li>
       <li class="menu__item"><a class="menu__link" href="#">ISTORIC</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">CONTACTE</a></li>
+      <li class="menu__item"><a class="menu__link" href="contacte.html">CONTACTE</a></li>
     </ul>
     <p>&copy;2024 MOȘTENIRE CREATIVĂ | Firladeni</p>
   </footer>
