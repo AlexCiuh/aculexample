@@ -1,1 +1,1 @@
-# aculexample
+# Arta Traditionala

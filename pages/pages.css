@@ -500,25 +500,25 @@ h5 {color: #111
   }
 
 
-/* ... ваш предыдущий CSS код ... */
+/*  CSS cod ... */
 
-/* Обновленный стиль для списка внутри элемента с классом content */
+/* updt content css */
 .content ul {
-  list-style-type: disc; /* Выберите желаемый тип маркера */
-  list-style-position: inside; /* Помещаем маркеры внутрь элемента списка */
+  list-style-type: disc; /* mark */
+  list-style-position: inside; /* mark lsit */
   margin: 20px 0;
-  padding-left: 20px; /* Управляем отступом маркеров от левого края */
+  padding-left: 20px; /* colt */
   display: flex;
-  flex-direction: column; /* Размещаем элементы списка в столбце */
-  align-items: flex-start; /* Выравниваем текст по верхней линии маркера */
+  flex-direction: column; /* elementele */
+  align-items: flex-start; /* textul fx */
 }
 
-/* ... ваш предыдущий CSS код ... */
+/* ...css cod wrapper ... */
 .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust the height as needed */
+    height: 100vh; 
 }
 
 .form {
@@ -526,8 +526,8 @@ h5 {color: #111
     box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
     border-radius: 5px;
     max-width: 480px;
-    padding: 20px; /* Add padding for better spacing */
-    text-align: center; /* Center-align the form content */
-    margin-top: 20px; /* Add top margin for spacing */
-    /* Other styles remain unchanged */
+    padding: 20px; 
+    text-align: center; 
+    margin-top: 20px;
+  
 }

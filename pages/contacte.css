@@ -1196,37 +1196,37 @@ body {
   }
 }
 
-/* Add margin to create space between header and content */
+
 .navbar {
     position: absolute;
-    top: 20px; /* Add some margin, adjust as needed */
+    top: 20px; 
     left: 0;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    opacity: 0; /* Initial opacity */
+    opacity: 0; 
     animation: fadeInDown 1.5s ease-out forwards;
   }
   
-  /* Add border around contact information */
+  
   .form-box {
-    border: 2px solid #333; /* Add your desired border color */
+    border: 2px solid #333; 
     padding: 20px;
-    border-radius: 10px; /* Add border-radius for rounded corners */
+    border-radius: 10px;
   }
   .landing_page {
     position: relative;
 
-    opacity: 0; /* Initial opacity */
+    opacity: 0;
     animation: fadeInUp 1.5s ease-out forwards;
   }
   
   .form-box {
-    border: 2px solid #333; /* Add your desired border color */
+    border: 2px solid #333; 
     padding: 20px;
-    border-radius: 10px; /* Add border-radius for rounded corners */
-    margin-top: 20px; /* Adjust the margin-top value as needed */
+    border-radius: 10px; 
+    margin-top: 20px; 
   }
   
