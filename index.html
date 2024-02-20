@@ -8,6 +8,44 @@
     <link rel="icon" href="images/free-icon-moldova-5204752.png"/>
     <title>Arta traditionala</title>
     <style>
+      /* Ваши стили из предыдущего кода */
+  
+      
+      @media screen and (max-width: 767px) {
+      @keyframes fadeInFromTop {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+  
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #3333331c;
+        z-index: 1000;
+        animation: fadeInFromTop 0.5s ease-out;
+        display: none; /* Начально скрываем меню */
+      }
+  
+      .navbar ul.show {
+        display: flex;
+      }
+  
+     }
+    </style>
+  
+    <style>
         * {
           margin: 0;
           padding: 0;
@@ -69,7 +107,7 @@
             top: 70px;
             left: 0;
             width: 100%;
-            background-color: #333;
+            background-color: #33333383;
             z-index: 1000;
           }
     

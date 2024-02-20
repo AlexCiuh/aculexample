@@ -7,7 +7,7 @@
 
 .banner {
   width: 100%;
-  height: 150vh;
+  height: 220vh;
   background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/IMG-7516062d0682f49db0e78a47630ae593-V.webp);
   background-size: cover;
   background-position: center;
@@ -383,6 +383,8 @@ p {
     z-index: 1000;
   }
 
+
+
   .navbar ul.show {
     display: flex;
   }
@@ -404,7 +406,7 @@ p {
   }    .banner {
   position: relative;
   width: 100%;
-  height: 200vh;
+  height: 235vh;
 }
 
 
@@ -434,6 +436,7 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
+  
   transform: translate(-50%, -50%);
   text-align: center;
   color: #000000;
@@ -474,4 +477,57 @@ p {
   transform: scale(1.1);
   border: 2px solid #000000; /* Цвет бордера при наведении */
   box-shadow: 2 8px 15px rgb(0, 0, 0); /* Увеличенная тень при наведении */
+}
+li {
+  color: rgb(0, 0, 0); /* bullet color */
+}
+li span {
+  color: black; /* text color */
+}
+
+h5 {color: #111
+  ;}
+
+
+
+  h3 {
+    color: #000000;
+  }
+
+
+  h4 {
+    color: #000000;
+  }
+
+
+/* ... ваш предыдущий CSS код ... */
+
+/* Обновленный стиль для списка внутри элемента с классом content */
+.content ul {
+  list-style-type: disc; /* Выберите желаемый тип маркера */
+  list-style-position: inside; /* Помещаем маркеры внутрь элемента списка */
+  margin: 20px 0;
+  padding-left: 20px; /* Управляем отступом маркеров от левого края */
+  display: flex;
+  flex-direction: column; /* Размещаем элементы списка в столбце */
+  align-items: flex-start; /* Выравниваем текст по верхней линии маркера */
+}
+
+/* ... ваш предыдущий CSS код ... */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+}
+
+.form {
+    background: #fff;
+    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+    border-radius: 5px;
+    max-width: 480px;
+    padding: 20px; /* Add padding for better spacing */
+    text-align: center; /* Center-align the form content */
+    margin-top: 20px; /* Add top margin for spacing */
+    /* Other styles remain unchanged */
 }
