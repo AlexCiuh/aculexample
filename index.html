@@ -1,13 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/free-icon-moldova-5204752.png"/>
-    <title>Arta traditionala</title>
+    <title>Arta tradițională</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <style>
+      /* mobile style */
+  
+      @media screen and (max-width: 767px) {
+      @keyframes fadeInFromTop {
+        from {
+          opacity: 0;
+          transform: translateY(0px);
+        }
+  
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #3333331c;
+        z-index: 1000;
+        animation: fadeInFromTop 0.5s ease-out;
+        display: none; /*menu */
+      }
+  
+      .navbar ul.show {
+        display: flex;
+      }
+  
+     }
+    </style>
+  
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", sans-serif;
+        }
+    
+        /* stil gps */
+        .navbar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1000;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          opacity: 0; /* 0pacitatea  */
+          animation: fadeInDown 1.5s ease-out forwards;
+        }
+    
+        .navbar .logo {
+          display: block;
+          cursor: pointer;
+        }
+    
+        .navbar ul {
+          list-style: none;
+          display: flex;
+        }
+    
+        .navbar ul li {
+          margin: 0 20px;
+        }
+    
+        .navbar ul li a {
+          text-decoration: none;
+          color: #fff;
+          text-transform: uppercase;
+        }
+    
+        /* stil pk */
+        @media screen and (min-width: 768px) {
+          .burger-menu {
+            display: none;
+          }
+    
+          .navbar ul {
+            display: flex;
+          }
+        }
+    
+        /* moblie 767 pixl */
+        @media screen and (max-width: 767px) {
+          .navbar ul {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: #33333383;
+            z-index: 1000;
+          }
+    .table1 {
+        width: 100%;
+  max-width: 130px; /* Уменьшенный размер изображения */
+  margin: 10px 0; /* Уменьшенные отступы */
+  border: 2px solid transparent; /* Увеличенная толщина бордера */
+  border-radius: 8px; /* Увеличенный радиус скругления углов */
+  transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.726); /* Добавленная тень */
+    }
+          .navbar ul.show {
+            display: flex;
+          }
+    
+          .navbar ul li {
+            margin: 10px 0;
+          }
+    
+          .burger-menu {
+            display: block;
+            cursor: pointer;
+          }
+    
+          .burger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 6px 0;
+           
+  
+          }
+          .banner {
+    width: 100%;
+    height: 190vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(images/IMG-7516062d0682f49db0e78a47630ae593-V.webp);
+    background-size: cover;
+    background-position: center;
+  
+  }
+        }
+    
+
+    
+        .content {
+            height: 1lvh;
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color: #fff;
+          padding: 20px;
+        }
+    
+        .content h1, .content p, .content button {
+          opacity: 0;
+          animation: fadeInUp 1.5s ease-out forwards;
+          animation-delay: 0.5s; 
+        }
+    
+        .content h1 {
+          font-size: 40px;
+          margin-top: 40px;
+        }
+    
+        .content p {
+          margin: 20px auto;
+          font-weight: 100;
+          line-height: 25px;
+        }
+
+        /* footer */
+        .footer {
+          opacity: 0;
+          animation: fadeInUp 1.5s ease-out forwards;
+          animation-delay: 1s;
+        }
+
+        
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .form-box {
+            margin-top: 50px;
+        }
+
+        .form-box input,
+        .form-box textarea,
+        .form-box button {
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-box button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        #iq5bf {
+  display: none;
+}
+/* ... Ваш существующий CSS ... */
+
+/* Добавьте следующие стили для адаптации изображений и таблиц для мобильных устройств */
+
+/* mobile style */
+@media screen and (max-width: 767px) {
+    /* Уменьшение размера изображений */
+    .table1 img {
+        width: 100%; /* Ширина изображения на всю ширину экрана */
+        max-width: 100%; /* Максимальная ширина изображения */
+        height: auto; /* Сохранение соотношения сторон */
+    }
+    .image-container1 {
+        width: 100%; /* Ширина изображения на всю ширину экрана */
+        max-width: 100%; /* Максимальная ширина изображения */
+        height: auto; /* Сохранение соотношения сторон */
+    }
+    /* Уменьшение размера таблицы */
+    .table1 {
+        max-width: 100%; /* Максимальная ширина таблицы */
+        overflow-x: auto; /* Добавление горизонтального скролла при необходимости */
+    }
+
+    .table1 table {
+        width: 100%; /* Ширина таблицы на всю ширину экрана */
+    }
+}
+/* mobile style */
+@media screen and (max-width: 767px) {
+  @keyframes fadeInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0; /* Adjusted position to right */
+    width: 100%;
+    background-color: #3333331c;
+    z-index: 1000;
+    animation: fadeInFromTop 0.5s ease-out;
+    display: none; /* menu */
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  /* ... (existing styles) */
+}
+
+    </style>
+        <style>
       /* stilurile pentru mobile */
   
       
@@ -199,33 +486,398 @@
     </style>
 </head>
 <body>
+    <div class="banner">
+        <div class="navbar">
+            <div id="results"></div>
+            <img src="images/IMG-39b918a81de3ed895cca0aed020e3c88-V.jpg" class="logo">
+            <ul>
+                <li><a href="../index.html">ACASĂ</a></li>
+                <li><a href="#22">DESPRE</a></li>
+                <li><a href="istoric.html">ISTORIC</a></li>
+                <li><a href="#">CONTACTE</a></li>
+            </ul>
+            <!-- Pictograma pentru meniul Burger -->
+            <div class="burger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    
+        <div class="landing_page">
+            <div class="responsive-container-block big-container">
+                <img class="bg-img">
+                <div class="responsive-container-block container">
+                    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 left-one">
+                        <!-- ... (codul existent) ... -->
+                    </div>
+    
+                    <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6 right-one" id="i1zj">
+                        <div class="content">
+                            <p></p>
+                            <p></p>
+                            <p></p>
 
-<div class="banner">
-    <div class="navbar">
-        <div id="results"></div>
-        <img src="images/IMG-39b918a81de3ed895cca0aed020e3c88-V.jpg" class="logo">
-        <ul>
-            <li><a href="index.html">ACASA</a></li>
-            <li><a href="pages/despre.html">DESPRE</a></li>
-            <li><a href="pages/istoric.html">ISTORIC</a></li>
-            <li><a href="pages/contacte.html">CONTACTE</a></li>
-        </ul>
-        <!-- Burger Menu Icon -->
-        <div class="burger-menu" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+                            <h1>
+                                
+                                
+                                MOȘTENIRE CREATIVĂ</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing el itiae corporis provident blanditiis...</p>
+                            <div>
+                                <button onclick="window.location.href = 'pages/index.html';" type="button">
+                                    <span></span>Afla mai multe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
 
-    <div class="content">
-        <h1>MOȘTENIRE CREATIVĂ</h1>
-        <p>Lorem ipsum dolor sit amet consectetur <br>adipisicing el itiae corporis provident blanditiis porro <br> asperiores ratione explicabo totam dolores pariatur. Harum?</p>
-        <div>
-            <button onclick="window.location.href = 'pages/despre.html';" type="button"> <span></span>Afla mai multe</button>
-        </div>
+
+
+    
+
+
+        <section id="22">
+            <center>
+                    <h1>Moștenirea creatiivă</h1>
+            </center>
+            <p>
+                    În cadrul societății umane din localitatea noastră Fârladeni, moștenirea culturală reprezintă un
+                    pilon fundamental al identității
+                    și coeziunii sociale. Această moștenire este adesea reflectată și perpetuată prin intermediul
+                    portului popular și al activităților tradiționale, care servesc nu doar ca simple expresii
+                    artistice sau forme de divertisment, ci și ca mijloace esențiale prin care o comunitate își
+                    păstrează conexiunea cu trecutul său, își exprimă valorile și își afirmă unicul său spirit
+                    cultural.
+        
+                    Portul popular, în special, reprezintă o punte între trecut și prezent, reflectând nu doar
+                    evoluția modei și gusturilor estetice, ci și schimbările sociale și economice dintr-o anumită
+                    regiune sau comunitate. Fiecare piesă de îmbrăcăminte, fiecare broderie sau fiecare accesoriu
+                    are o poveste de spus, o istorie care se întrepătrunde cu tradițiile și credințele ancestrale
+                    ale poporului. În culorile și modelele sale, portul popular își găsește rădăcinile adânci în
+                    mediul înconjurător, în obiceiurile și în credințele unei comunități.
+        
+                    Cu toate acestea, portul popular nu este doar o relicvă a trecutului, ci și o sursă continuă de
+                    inspirație pentru creativitatea contemporană. Designerii moderni își găsesc deseori inspirația
+                    în elementele tradiționale ale portului popular, reinterpretându-le într-un mod proaspăt și
+                    inovator. Această sinteză între tradiție și modernitate aduce un nou suflu de viață moștenirii
+                    culturale, îmbogățind și diversificând modul în care aceasta este percepută și transmisă.
+        
+                    Pe lângă portul popular, activitățile tradiționale joacă și ele un rol vital în perpetuarea
+                    moștenirii culturale. Dansurile folclorice, meșteșugurile tradiționale și festivalurile populare
+                    sunt momente de reînnoire și celebrare a valorilor și tradițiilor unei comunități. Aceste
+                    activități nu numai că încurajează participarea activă a comunității, ci și promovează
+                    schimburile intergeneraționale și întăresc legăturile sociale.
+                    </br>
+                    </br>
+            <div  class="image-container1">
+                    <img class="table1"
+                            src="images/0-02-05-ea8e536af3eaab4f94e94ba96a29e0e1059794fcc468b8f4212d9b00a87f3a56_1c6db81fe7caad.jpg">
+                    <img class="table1"
+                            src="images/0-02-05-f93e242a9f502296072dffc3d4a9a2504484f5d62fb990292b9722a4f13b80d0_1c6db81fe60e88.jpg">
+                    <img class="table1"
+                            src="images/0-02-05-4b4366a019eceaa18edd4c6008d285dfa8551754d9d53c6c20ec855420270892_1c6db81fe6004a.jpg">
+            </div>
+            </p>
+        </section>
+        <section>
+            <div class="ie">
+                    <center>
+                            <h1>Structura portului popular</h1>
+                    </center>
+                    <p>Costumul tradițional este un indicator al apartenenţei entice, o marcă de identitate, prin
+                            care ne
+                            informam despre cultura şi măiestria poporului,
+                            este un etalon de demnitate şi frumusețe . Portul nostru, moştenit de la strămoşii
+                            daci și geți, îl găsim săpat de milenii pe Columna lui Traian de la Roma. Această
+                            moştenire
+                            trebuie să fie studiată, observind specificul materiei prime, croiala, ornamentica, cro-
+                            matica
+                            aplicate la realizarea articolelor de port popular. Cămăşile femeieşti şi bărbăteşti,
+                            iile,
+                            poalele cămăşilor, batista în trei colțuri sînt albe, ceea ce denotă curățenie fizică și
+                            morală.
+                            Legea de bază a croiului de port popular este tăietura din foi drepte, dreptunghiulare,
+                            fără
+                            răscroituri. Această croială a rămas neschimbată de-a lungul secolelor, ea dovedește o
+                            atitudine
+                            rațională şi cunoaşterea liniilor de croi.In portul feminin se disting trei tipuri de
+                            cămăși în
+                            funcție de croi: cd maşa de-a întregul", de tip tunică (cămaşa bătrînească), cămaşa
+                            încreţită la
+                            git, considerate cele mai vechi, şi cămaşa cu platcă - influență a costumuluj orăşenesc
+                            . Cămaşa lungă, încrețită la git din considerente practice, a suferit și ea, în
+                            timp, o schimbare prin despărţirea părții de sus, ia, de partea de jos - poalele.
+                            Structura iei a devenit mai compli cată față de cea a poalelor. la este portul sătencei
+                            de la şes sau de la munte, la muncă sau la petrecere. la este o cămașă dreaptă fără
+                            nicio
+                            răscroitură se încheie (montează) pe părţi, iar la git are crețuri. Mineca cămășii poate
+                            fi
+                            largă sau strînsă cu o bentiță, în funcție de zona etnografică.
+        
+                            Tipurile cămăşii tradiționale bărbăteşti după croială sînt: cămaşa dreaptă tip tunică
+                            (bătrînească), cămașa scurtă, cămaşa cu clini, cămașa cu platcă. Cămaşa dreaptă de tip
+                            tunică
+                            este o formă arhaică, de largă răspindire teri- torială în toate zonele Moldovei .
+                            Cămaşa a fost și este piesa cea mai importantă a costumului femeiesc şi a celui
+                            bărbătesc. În
+                            costumul tradițional al moldovenilor s-au creat diverse tipuri de cămăși. Întreaga
+                            tipologie a
+                            cămăşii are la bază clasificări după diferite criterii: in funcție de virsta
+                            purtătorilor
+                            (cămăși purtate de copii, tineri sau adulţi), de ocazie (cămăși de sărbătoare şi
+                            cotidiene). Un
+                            criteriu important la clasificarea cămășilor tradiționale este simbolica - cămăși pur-
+        
+                            tate în cele mai importante momente din viața omului: naşterea, căsătoria,moartea:
+                            cămaşa de
+                            botez, cămaşa mirelui cămaşa miresei de soacră, cămaşa de
+                            înmormântare. În trecut, fata îşi pregătea zestrea împreună cu mama. În familie, de
+        
+                            mică învăța să prelucreze lina, cinepa, să ţese, să brodeze, să croşeteze, să
+                            confecţioneze
+                            haine de sărbătoare conform tiparelor specifice zonei, localității etc. De exemplu, o ie
+                            pe care
+                            trebuia să o îmbrace în ziua de Paşti la biserică, la horă, cu ornamentaţie şi cromatică
+                            deosebite. Bazat pe vechea moştenire, portul popular a evoluat de-a lungul timpurilor.
+        
+                            În prezent, costumul tradițional femeiesc și cel bărbătesc sînt purtate de interpreții
+                            ansamblurilor etnofolclorice, de dans, de cîntec, la concursurile si festivalurile de
+                            folclor
+                            autohton și la alte sărbători naționale .
+                            </br>
+                            </br>
+                            <center>
+                                    <img class="table1" src="images/Ie.png">
+                            </center>
+            </div>
+            </p>
+        
+        </section>
+        
+        
+        
+        </br>
+        </br>
+        </center>
+        <section>
+        <center>
+            <h1>Semnele</h1>
+        </center>
+        
+        
+        
+        <p>Cu mii de ani înainte de apariția scrisului, oamenii şi-au transmis informația prin simboluri. Inspirați de
+            puterea Soarelui și a Pământului, au creat un cod de semne pe care l-au perpetuat până în zilele noastre
+            prin toate manifestările lor artistice și practice. Bazate pe principiile de bază ale universului:
+            echilibrul, regenerarea, ciclicitatea, ele sunt mijloace de comunicare atemporale și nu aparţin doar
+            neamului nostru. Voi încerca să vă prezint, aşa cum am înţeles eu până acum, care este rostul celor mai
+            frecvente semne cusute pe ie. Nu pretind că acestea sunt semnificaţiile indiscutabile, pentru că în
+            general
+            nici un simbol nu poate fi supus unei definiții fără echivoc și probabil nu va exista niciodată o
+            formulare
+            clară pentru fiecare din ele. Scopul meu nu este să le definesc, ci să îmbogăţesc percepția generală pe
+            care
+            o avem pentru fiecare dintre ele și să vă las să intuiți sensuri noi. (Stela Moldovanu) Dați click pe
+            fiecare imagine pentru a descoperi semnificația și a vedea exemplificări pe ie cu acest semn.</p>
+        </br>
+        </br>
+        
+        
+        
+              <div class="table1">
+       
+            <center>
+                <table  td="600px">
+                        <tr>
+        
+                                <td>
+                                        <img src="images/hașura.jpg" width="200"></a>
+                             
+                                        <center>
+                                                <h4>
+                                                        Hașura
+                                                </h4>
+                                        </center>
+                                </td>
+                                <td>
+                                        <a href="https://maiestria.com/semne/galerie/album/coltii-lupului">
+                                                <img src="images/Colti_Lup.jpg-nggid03184-ngg0dyn-240x160x100-00f0w010c011r110f110r010t010.jpg" width="200"></a>
+        
+                                        <center>
+                                                <h4>
+                                                        Coltii lupui
+                                                </h4>
+                                        </center>
+        
+                                </td>
+                                <td>
+        
+                                        <a
+                                                href="https://maiestria.com/semne/galerie/album/coarnele-berbecului"><img
+                                                        src="images/coarnele_berbecului.jpg-nggid03176-ngg0dyn-240x160x100-00f0w010c011r110f110r010t010.jpg"
+                                                        width="200"></a>
+                                        <center>
+                                                <h4>Coarnele berbecului</h4>
+                                        </center>
+                                </td>
+        
+        
+                        </tr>
+                        <tr>
+                                <td>
+                                        <a href="https://maiestria.com/semne/galerie/album/calea-ocolita"><img
+                                                        src="images/calea_ocolita.jpg-nggid03169-ngg0dyn-240x160x100-00f0w010c011r110f110r010t010.jpg" width="200"></a>
+                                        <center>
+                                                <h4>Calea oculită</h4>
+                                        </center>
+                                </td>
+                                <td>
+                                        <a href="https://maiestria.com/semne/galerie/album/vartelnita">
+                                                <img src="images/thumbs_vartelnita 2.jpg" width="200"></a>
+                                        <center>
+                                                <h4>Vartelnita</h4>
+                                        </center>
+                                </td>
+                                <td>
+                                        <a href="https://maiestria.com/semne/galerie/album/spicul"> <img
+                                                        src="images/thumbs_spicul 2.jpg" width="200"></a>
+                                        <center>
+                                                <h4>
+                                                        Spicul
+                                                </h4>
+                                        </center>
+                                </td>
+        
+        
+                        </tr>
+                        <tr>
+                                <td>
+                                        <a href="https://maiestria.com/semne/galerie/album/sfaditele">
+                                                <img src="images/thumbs_sfaditele 2.jpg"></a>
+                                        <center>
+                                                <h4>
+                                                        Sfaditele
+                                                </h4>
+                                        </center>
+                                </td>
+                                <td>
+                                        <a href="https://maiestria.com/semne/galerie/album/rombul">
+                                                <img src="images/thumbs_rombul 2.jpg"></a>
+                                        <center>
+                                                <h4>
+                                                        Rombul
+                                                </h4>
+        
+                                        </center>
+                                </td>
+                                <td>
+                                        <a href="https://maiestria.com/semne/galerie/album/pomul-vietii">
+                                                <img src="images/thumbs_pomul_vietii 2.jpg"></a>
+        
+                                        <center>
+                                                <h4>
+                                                        Pomul vieti
+                                                </h4>
+                                        </center>
+        
+        
+                                </td>
+        
+                        </tr>
+                        <tr><td>
+                            <a href="https://maiestria.com/semne/galerie/album/crucea">
+                                    <img src="images/crucea 2.jpg"></a>
+                            <center>
+                                    <h4>Crucea</h4>
+                            </center>
+                    </td>
+                    <td>
+                            <a href="https://maiestria.com/semne/galerie/album/spirala">
+                                    <img src="images/thumbs_spirala 2.jpg"></a>
+                            <center>
+                                    <h4>Spirala</h4>
+        
+                            </center>
+                    </td>
+                    <td>
+                            <a href="https://maiestria.com/semne/galerie/album/soarele"> <img
+                                            src="images/thumbs_soarele 2.jpg"></a>
+                            <center>
+                                    <h4>
+                                            Soarele
+        
+                                    </h4>
+                            </center>
+        
+                    </td>
+        
+        
+            </tr>
+            <tr>
+                    <td>
+                            <a href="https://maiestria.com/semne/galerie/album/unghiul"> <img
+                                            src="images/unghiul.jpg-nggid03233-ngg0dyn-240x160x100-00f0w010c011r110f110r010t010.jpg"></a>
+                            <center>
+                                    <h4>Unghiul</h4>
+                            </center>
+                    </td>
+                    <td>
+                            <a href="https://maiestria.com/semne/galerie/album/miezul-de-nuca"><img
+                                            src="images/thumbs_nuca 2.jpg"></a>
+                            <center>
+                                    <h4>Miezul de nuca</h4>
+                            </center>
+                    </td>
+                    <td>
+                            <a href="https://maiestria.com/semne/galerie/album/pieptenele"><img
+                                            src="images/thumbs_Pieptene 2.jpg"> </a>
+                            <center>
+                                    <h4>Pieptene</h4>
+                            </center>
+                    </td>
+            </tr>
+            <tr>
+                    <td>
+                            <a href="https://maiestria.com/semne/galerie/album/ochiul"><img
+                                            src="images/ochiul 2.jpg" width="200px"> </a>
+                            <center>
+                                    <h4>Ochiul</h4>
+                            </center>
+                    </td>
+                    <td>
+                            <a href="https://maiestria.com/semne/galerie/album/maini-pe-solduri">
+                                    <img src="images/maini_pe_solduri 2.jpg"></a>
+                            <center>
+                                    <h4>
+                                            Mâini pe șolduri
+                                    </h4>
+                            </center>
+                    </td>
+                    <td>
+                            <a
+                                    href="https://maiestria.com/semne/galerie/album/carligul-ciobanului">
+                                    <img src="images/carligul_ciobanului.jpg-nggid03173-ngg0dyn-240x160x100-00f0w010c011r110f110r010t010.jpg"></a>
+                            <center>
+                                    <h4>Carligul ciobanului</h4>
+                            </center>
+                    </td>
+        
+            </tr>
+        
+        
+        </table></div>
+        </center>
+        </section>
+        
+        
+        </section>
     </div>
-</div>
+
 
 <footer class="footer">
     <div class="waves">
@@ -242,9 +894,9 @@
     </ul>
     <ul class="menu">
       <li class="menu__item"><a class="menu__link" href="#">ACASA</a></li>
-      <li class="menu__item"><a class="menu__link" href="./pages/despre.html">DESPRE</a></li>
-      <li class="menu__item"><a class="menu__link" href="./pages/istoric.html">ISTORIC</a></li>
-      <li class="menu__item"><a class="menu__link" href="./pages/contacte.html">CONTACTE</a></li>
+      <li class="menu__item"><a class="menu__link" href="#22">DESPRE</a></li>
+      <li class="menu__item"><a class="menu__link" href="pages/istoric.html">ISTORIC</a></li>
+      <li class="menu__item"><a class="menu__link" href="pages/contacte.html">CONTACTE</a></li>
     </ul>
     <p>&copy;2024 MOȘTENIRE CREATIVĂ | Firladeni</p>
 </footer>
@@ -261,3 +913,8 @@
 
 </body>
 </html>
+
+
+
+
+
