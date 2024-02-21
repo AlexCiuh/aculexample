@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contacte.css">
+    <link rel="icon" href="../images/free-icon-moldova-5204752.png"/>
+    <title>Arta tradițională</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <style>
+      /* mobile style */
+  
+      @media screen and (max-width: 767px) {
+      @keyframes fadeInFromTop {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+  
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #3333331c;
+        z-index: 1000;
+        animation: fadeInFromTop 0.5s ease-out;
+        display: none; /*menu */
+      }
+  
+      .navbar ul.show {
+        display: flex;
+      }
+  
+     }
+    </style>
+  
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", sans-serif;
+        }
+    
+        /* stil gps */
+        .navbar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1000;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          opacity: 0; /* 0pacitatea  */
+          animation: fadeInDown 1.5s ease-out forwards;
+        }
+    
+        .navbar .logo {
+          display: block;
+          cursor: pointer;
+        }
+    
+        .navbar ul {
+          list-style: none;
+          display: flex;
+        }
+    
+        .navbar ul li {
+          margin: 0 20px;
+        }
+    
+        .navbar ul li a {
+          text-decoration: none;
+          color: #fff;
+          text-transform: uppercase;
+        }
+    
+        /* stil pk */
+        @media screen and (min-width: 768px) {
+          .burger-menu {
+            display: none;
+          }
+    
+          .navbar ul {
+            display: flex;
+          }
+        }
+    
+        /* moblie 767 pixl */
+        @media screen and (max-width: 767px) {
+          .navbar ul {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: #33333383;
+            z-index: 1000;
+          }
+    
+          .navbar ul.show {
+            display: flex;
+          }
+    
+          .navbar ul li {
+            margin: 10px 0;
+          }
+    
+          .burger-menu {
+            display: block;
+            cursor: pointer;
+          }
+    
+          .burger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 6px 0;
+            
+          }
+          .banner {
+    width: 100%;
+    height: 250vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/IMG-7516062d0682f49db0e78a47630ae593-V.webp);
+    background-size: cover;
+    background-position: center;
+  
+  }
+        }
+    
+        /* benner */
+        .banner {
+          position: relative;
+          opacity: 0; /* opacitatea */
+          animation: fadeInUp 1.5s ease-out forwards;
+        }
+    
+        .content {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color: #fff;
+          padding: 20px;
+        }
+    
+        .content h1, .content p, .content button {
+          opacity: 0;
+          animation: fadeInUp 1.5s ease-out forwards;
+          animation-delay: 0.5s; 
+        }
+    
+        .content h1 {
+          font-size: 40px;
+          margin-top: 40px;
+        }
+    
+        .content p {
+          margin: 20px auto;
+          font-weight: 100;
+          line-height: 25px;
+        }
+
+        /* footer */
+        .footer {
+          opacity: 0;
+          animation: fadeInUp 1.5s ease-out forwards;
+          animation-delay: 1s;
+        }
+
+        
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .form-box {
+            margin-top: 50px;
+        }
+
+        .form-box input,
+        .form-box textarea,
+        .form-box button {
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-box button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        #iq5bf {
+  display: none;
+}
+    </style>
+</head>
+<body>
+
+<div class="banner">
+    <div class="navbar">
+        <div id="results"></div>
+        <img src="../images/IMG-39b918a81de3ed895cca0aed020e3c88-V.jpg" class="logo">
+        <ul>
+            <li><a href="../index.html">ACASĂ</a></li>
+            <li><a href="../index.html">DESPRE</a></li>
+            <li><a href="istoric.html">ISTORIC</a></li>
+            <li><a href="#">CONTACTE</a></li>
+        </ul>
+        <!-- Pictograma pentru meniul Burger -->
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <div class="landing_page">
+        <div class="responsive-container-block big-container">
+          <img class="bg-img" >
+          <div class="responsive-container-block container">
+            <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 left-one">
+              <div class="form-box">
+                <p class="text-blk section-head">
+                  Contacte
+                </p>
+                <p class="text-blk section-subhead">
+                  Conducător: Cucovici Antonina
+                </p>
+                <p class="text-blk section-subhead">
+                  Număr de telefon
+                </p>
+                <p class="text-blk section-subhead">
+                  Adresă de poștă
+                </p>
+                <div class="icons-container">
+                    <ul class="social-icon">
+                        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6 right-one" id="i1zj">
+    <form class="form-box" id="myForm">
+        <div class="container-block form-wrapper">
+            <p class="text-blk contactus-head">
+                <a class="link" href=""></a>
+                Mesaj
+            </p>
+            <p class="text-blk contactus-subhead">
+                Mesaj către conducătorul acestui atelier
+            </p>
+            <div class="responsive-container-block">
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-7">
+                    <input class="input" id="ijowk-7" name="Numele" placeholder="Numele">
+                </div>
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i1ro7">
+                    <input class="input" id="indfi-5" name="Prenumele" placeholder="Prenumele">
+                </div>
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-6 wk-ipadp-6 email" id="ityct">
+                    <input class="input" id="ipmgh-7" name="Email" placeholder="Email">
+                </div>
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                    <input class="input" id="imgis-6" name="Numarul de telefon" placeholder="Numărul de telefon">
+                </div>
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-7">
+                    <textarea placeholder="Mesajul" class="textinput" id="i5vyy-7"></textarea>
+                </div>
+            </div>
+            <button class="submit-btn" type="button" onclick="sendEmail()">
+                Trimite Mesajul
+            </button>
+        </div>
+    </form>
+</div>
+
+          </div>
+        </div>
+      </div>
+    
+</div>
+
+<footer class="footer">
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        
+            <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        </ul>
+        <ul class="menu">
+          <li class="menu__item"><a class="menu__link" href="../index.html">ACASĂ</a></li>
+          <li class="menu__item"><a class="menu__link" href="../index.html">DESPRE</a></li>
+          <li class="menu__item"><a class="menu__link" href="istoric.html">ISTORIC</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">CONTACTE</a></li>
+        </ul>
+        <p>&copy;2024 MOȘTENIRE CREATIVĂ | Fîrlădeni</p>
+    </footer>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.navbar ul');
+            menu.classList.toggle('show');
+        }
+    
+        function sendEmail() {
+            emailjs.init("G8kvW5peVV5gc0WAn"); 
+            var form = document.getElementById("myForm");
+            var inputs = form.querySelectorAll('input');
+        for (var i = 0; i < inputs.length; i++) {
+            if (!inputs[i].value.trim()) {
+                alert("Completați toată ancheta.");
+                return false;
+            }
+        }
+
+  
+        var textarea = form.querySelector('textarea');
+        if (!textarea.value.trim()) {
+            alert("Completați toată ancheta.");
+            return false;
+        }
+            emailjs.sendForm("service_7ttb51o", "template_tg003pi", form)
+                .then(
+                    function (response) {
+                        console.log("Trimitere cu succes:", response);
+                        window.location.reload();
+         
+                    },
+                    function (error) {
+                        console.log("Trimitere eșuată:", error);
+      
+                    }
+                );
+    
+            return false; // trimitere ura
+        }
+    </script>
+    
+    </body>
+</html>

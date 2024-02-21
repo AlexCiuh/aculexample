@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="icon" href="images/free-icon-moldova-5204752.png" />
+  <title>Istoria</title>
+  <style>
+    /* stil mobile */
+
+    
+    @media screen and (max-width: 767px) {
+    @keyframes fadeInFromTop {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: #3333331c;
+      z-index: 1000;
+      animation: fadeInFromTop 0.5s ease-out;
+      display: none; /*menu */
+    }
+
+    .navbar ul.show {
+      display: flex;
+    }
+
+   }
+  </style>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      overflow-x: hidden; /* hide meniul */
+    }
+
+    /* style ptru border */
+    .center-border {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100vh;
+      width: 1px; 
+      background-color: #ffffff; /* Border culor */
+    }
+
+    /* Stilurile de navbar */
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      opacity: 0; /* opacivitatea */
+      animation: fadeInDown 1.5s ease-out forwards;
+    }
+
+    .navbar .logo {
+      display: block;
+      cursor: pointer;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .navbar ul li {
+      margin: 0 20px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    /* Stiluri pentru desktop */
+    @media screen and (min-width: 768px) {
+      .burger-menu {
+        display: none;
+      }
+
+      .navbar ul {
+        display: flex;
+      }
+    }
+
+    /* Stil pentru mobilele cu 767 pixeli */
+    @media screen and (max-width: 767px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #33333383;
+        z-index: 1000;
+      }
+
+      .navbar ul.show {
+        display: flex;
+      }
+
+      .navbar ul li {
+        margin: 10px 0;
+      }
+
+      .burger-menu {
+        display: block;
+        cursor: pointer;
+      }
+
+      .burger-menu .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 6px 0;
+      }
+    }
+
+    /* Stilurile pentru banner */
+    .banner {
+      position: relative;
+      opacity: 0; /* opaciviate */
+      animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    .content {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .content h1,
+    .content p,
+    .content button {
+      opacity: 0; /* opovacivitatea */
+      animation: fadeInUp 1.5s ease-out forwards;
+      animation-delay: 0.5s; /* blur effect la reload */
+    }
+
+    .content h1 {
+      font-size: 40px;
+      margin-top: 40px;
+    }
+
+    .content p {
+      margin: 20px auto;
+      font-weight: 100;
+      line-height: 25px;
+    }
+
+    /* img effecte */
+    .content img {
+      width: 100%; /* adjuste */
+      max-width: 400px; 
+      margin: 20px 0;
+      border: 1px solid transparent; 
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .content img:hover {
+      transform: scale(1.1);
+      border: 1px solid #fff; /
+    }
+
+    /* Stilurile pentru footer */
+    .footer {
+      opacity: 0;
+      animation: fadeInUp 1.5s ease-out forwards;
+      animation-delay: 1s; 
+    }
+
+    /* Stilurile pentru animatia de fade in */
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="center-border"></div>
+
+  <div class="banner">
+    <div class="navbar">
+      <div id="results"></div>
+      <img src="../images/IMG-39b918a81de3ed895cca0aed020e3c88-V.jpg" class="logo">
+      <ul>
+        <li><a href="../index.html">ACASA</a></li>
+        <li><a href="../index.html">DESPRE</a></li>
+        <li><a href="#">ISTORIC</a></li>
+        <li><a href="contacte.html">CONTACTE</a></li>
+      </ul>
+      <!-- Burger Menu Icon -->
+      <div class="burger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+    
+    <div class="content">
+      <div class="content">
+        <h1>Ansamblul folcloric ,,DATINA”, s. Fîrlădeni, r-l Căușeni</h1>
+        <p></p>
+        <h2>Conducător: Cucovici Antonina</h2>
+        <p>
+
+        </p>
+        <h2>Acompaniment: Ceban Larisa</h2>
+      <p>
+
+      </p>
+        <h3>1. Colectivul ansamblului folcloric ,,DATINA” a fost înființat în primăvara anului 2017, în cadrul implementării proiectului ,,Comunicarea prin tradiții populare...”.</h3>
+        <h3>2. Ansamblul folcloric ,,DATINA” a fost menționat cu diplome de merit pentru participare activă în promovarea tradițiilor naționale la festivalurile locale și raionale, precum:</h3>
+        <ul>
+          <li>Sărbătoarea ,,Ziua Națională a Vinului”, Căușeni, 15 octombrie 2017.</li>
+          <li>Festivalul cântecului pascal și a expoziției cu genericul ,,HRISTOS A ÎNVIAT”, Căușeni 2018.</li>
+          <li>„Din zestrea neamului, tradiții vechi și noi” Ediția I - „LA HUȘCĂ ÎN COȘCALIA”, satul Coșcalia, r-l Căușeni, 7 iulie 2018.</li>
+          <li>Festivalul cu genericul „PREACURATĂ-I FAȚA PÂINII...” Ediția a IV – 2018, s. Taraclia, r-l Căușeni.</li>
+          <li>1 decembrie 2018, Ziua națională a României; orașul Balan județul Harghita, România.</li>
+          <li>Festivalul cu genericul „PREACURATĂ-I FAȚA PÂINII...” Ediția a VII – 2022, s. Taraclia, r-l Căușeni.</li>
+          <li>Festivalul cu genericul „TOAMNA DE CHIHLIMBAR”, Căușeni 2022.</li>
+          <li>Ansamblul folkloric Datina în parteneriat cu IPÎ L.T., „M.Sadoveanu”, la o activitate unde a avut loc Campania „te vezi realizat acasă” implementată de Atelierul de producție video și educație media TeVezi în cadrul proiectului „Joboteca” program pilot de pregătire a tinerilor din Moldova pentru piața muncii 2021-2024. Implementat de Terre des homes România și Terre des homes Moldova în parteneriat cu MEC al RM și finanțat de UE.</li>
+          <li>Semn de gratitudine colectivul ansamblului folcloric „DATINA” din satul Fîrlădeni, pentru colaborarea sinceră manifestată constant pe parcursul anilor, cultivând obiceiurile și tradițiile naționale prin participarea la festivalul cântecului pascal „HRISTOS A ÎNVIAT”, 18 aprilie 2023, Căușeni.</li>
+          <li>Festivalul „La seceriș”, satul Cîrnățeni raionul Căușeni, 30 iulie 2023.</li>
+          <li>Festivalul cu genericul „TOAMNA DE CHIHLIMBAR”, Căușeni 2023.</li>
+        </ul>
+        <h3>3. O mică prezentare a localității Fîrlădeni.</h3>
+        <p>Mândri că au un sat mare și frumos, cu dealuri înverzite, cu oameni harnici și gospodari. În zilele obișnuite dis-de-dimineață clocotește satul, unde munca e în toi. În zi de sărbătoare stă mândru, căci în el răsună cântecul și dansul cu tradiții și obiceiuri moștenite din bărâni pe care le transmit mai departe celor tineri. Locul natal este mereu o sursă de dragoste și de admirație pentru fiecare dintre noi.</p>
+      
+        <img  src="../images/foto2.webp" style="width: 100%; max-width: 40%;" alt="Image 1">
+        <img src="../images/IMG-0b9aa6078563851c9c1249dbbdf77574-V (1).png" style="width: 100%; max-width: 40%;" alt="Image 2">
+      </div>
+    </div>
+  </div>
+
+  
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="../index.html">ACASA</a></li>
+      <li class="menu__item"><a class="menu__link" href="../index.html">DESPRE</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">ISTORIC</a></li>
+      <li class="menu__item"><a class="menu__link" href="contacte.html">CONTACTE</a></li>
+    </ul>
+    <p>&copy;2024 MOȘTENIRE CREATIVĂ | Firladeni</p>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.querySelector('.navbar ul');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+</body>
+
+</html>
