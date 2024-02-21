@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+   
+}
+
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('../Arta/images/backgroundimg.jpg');
+    background-size: cover;
+    background-position: center;
+   
+}
+
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.banner1{
+    width: 100%;
+    height: 100vh;
+    
+    background-size: cover;
+    background-position: center;
+   
+}
+
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff ;
+    text-transform: uppercase;
+   
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+
+}
+
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+@keyframes move {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+    animation: move 2.5s ease forwards;
+  }
+  @keyframes move1 {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }}
+  .content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    animation: move1 5s ease forwards; /* Corectat "easy" în "ease" */
+  }
+  
+
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color:  #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position :absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s ;
+
+}
+
+button:hover span{
+    width: 100%;
+}
+
+button:hover{
+    border: none;
+}
+
+
+/*{
+
+        border-radius: 15px; 
+        background-color: #f0f0f0;
+        padding: 20px; 
+        margin: 20px auto; 
+        max-width: 950px; 
+
+}
+
+.title {
+    text-align: center;
+}
+
+h1{
+    top: 20px;
+    
+}*/
+
+
+
+/*section {
+    border-radius: 15px; 
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 950px;
+}
+
+.image-row,
+.image-row1,
+.image-row2,
+.image-row3,
+.image-row4, 
+.image-row5{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    gap: 20px; 
+}
+
+.image-row img,
+.image-row1 img,
+.image-row2 img,
+.image-row3 img,
+.image-row4 img,
+.image-row5 {
+    width: calc(25% - 10px);
+    
+    height: auto; 
+    border-radius: 10px; 
+}
+
+
+.image-row,
+.image-row1,
+.image-row2,
+.image-row3,
+.image-row4,
+.image-row5:nth-child(even) {
+    justify-content: space-around;
+}
+
+
+.image-row img:hover,
+.image-row1 img:hover,
+.image-row2 img:hover,
+.image-row3 img:hover,
+.image-row4 img:hover,
+.image-row5 img:hover {
+    transform: scale(1.05); 
+    transition: transform 0.3s ease; 
+}*/
+section {
+    border-radius: 15px; 
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 950px;
+}
+
+
+
+/*.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    align-items: center;
+    gap: 20px;
+}
+
+.image-container img {
+    width: calc(25% - 10px); 
+    margin-bottom: 15px;
+    border-radius: 20%;
+    object-fit: cover;
+    margin-right: 10px;
+        transition: transform 0.5s ease;
+}*/
+.image-container img:hover {
+    transform: scale(1.1); 
+    cursor: pointer; 
+}
+.image-container {
+    display: flex;
+    flex-wrap: wram; /* Modificăm direcția de afișare a elementelor pe vertical */
+    align-items: center;
+}
+
+.image-container a {
+    flex-basis: calc(33.33% - 10px);
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.image-container a img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-caption {
+    font-size: 14px;
+    margin-top: 5px;
+}
+.image-container1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.image-container1 img {
+    width: 300px; /* Ajustați dimensiunea imaginii după preferință */
+    height: auto;
+    margin: 10px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+.image-container1 img:hover {
+    transform: scale(1.1); 
+    cursor: pointer; 
+}
+.ie img {
+    width: 450px; /* Ajustați dimensiunea maximă a imaginii după preferință */
+    height: 550px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+.ie img:hover {
+    transform: scale(1.1); 
+    cursor: pointer; 
+}
+.table1 {
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    padding: 20px; /* Aici setați grosimea padding-ului */
+}
+/*.table1 img {
+    display: block;
+    width: 100px;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.table1 img:hover {
+    transform: scale(1.1); 
+    cursor: pointer; 
+}*/
+.table1 img {
+    display: block;
+ 
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease, border-radius 0.3s ease; /* Adaugăm border-radius în tranziție */
+}
+
+.table1 img:hover {
+    transform: scale(1.1);
+    border-radius: 15px; /* Asigurăm că border-radius este aplicat și în timpul hover-ului */
+    cursor: pointer;
+}
