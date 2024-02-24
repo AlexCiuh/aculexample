@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="icon" href="images/free-icon-moldova-5204752.png"/>
+    <title>Arta tradițională</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <style>
+        /* mobile style */
+    
+        @media screen and (max-width: 767px) {
+        @keyframes fadeInFromTop {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+    
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+    
+        .navbar ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: #3333331c;
+          z-index: 1000;
+          animation: fadeInFromTop 0.5s ease-out;
+          display: none; /*menu */
+        }
+        .footer {
+  background-color: #db0e0e;
+  color: #fff;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Это заставляет футер не сжиматься, когда контент увеличивается */
+  top: 490vh;
+}
+.landing_page {
+    min-height: 740vh; /* Adjust the min-height as needed */
+  }
+
+        .navbar ul.show {
+          display: flex;
+        }
+    
+       }
+      </style>
+    
+      <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+          }
+      
+          /* stil gps */
+          .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            opacity: 0; /* 0pacitatea  */
+            animation: fadeInDown 1.5s ease-out forwards;
+          }
+      
+          .navbar .logo {
+            display: block;
+            cursor: pointer;
+          }
+      
+          .navbar ul {
+            list-style: none;
+            display: flex;
+          }
+      
+          .navbar ul li {
+            margin: 0 20px;
+          }
+      
+          .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+          }
+      
+          /* stil pk */
+          @media screen and (min-width: 768px) {
+            .burger-menu {
+              display: none;
+            }
+      
+            .navbar ul {
+              display: flex;
+            }
+          }
+      
+          /* moblie 767 pixl */
+          @media screen and (max-width: 767px) {
+            .navbar ul {
+              display: none;
+              flex-direction: column;
+              position: absolute;
+              top: 70px;
+              left: 0;
+              width: 100%;
+              background-color: #33333383;
+              z-index: 1000;
+            }
+      
+            .navbar ul.show {
+              display: flex;
+            }
+      
+            .navbar ul li {
+              margin: 10px 0;
+            }
+      
+            .burger-menu {
+              display: block;
+              cursor: pointer;
+            }
+      
+            .burger-menu .bar {
+              width: 25px;
+              height: 3px;
+              background-color: #fff;
+              margin: 6px 0;
+              
+            }
+            .banner {
+      width: 100%;
+      height: 250vh;
+      background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/IMG-7516062d0682f49db0e78a47630ae593-V.webp);
+      background-size: cover;
+      background-position: center;
+    
+    }
+          }
+      
+          /* benner */
+          .banner {
+            position: relative;
+            opacity: 0; /* opacitatea */
+            animation: fadeInUp 1.5s ease-out forwards;
+          }
+      
+          .content {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+          }
+      
+          .content h1, .content p, .content button {
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+            animation-delay: 0.5s; 
+          }
+      
+          .content h1 {
+            font-size: 40px;
+            margin-top: 40px;
+          }
+      
+          .content p {
+            margin: 20px auto;
+            font-weight: 100;
+            line-height: 25px;
+          }
+  
+          /* footer */
+          .footer {
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+            animation-delay: 1s;
+          }
+  
+          
+          @keyframes fadeInUp {
+              from {
+                  transform: translateY(20px);
+                  opacity: 0;
+              }
+              to {
+                  transform: translateY(0);
+                  opacity: 1;
+              }
+          }
+  
+          @keyframes fadeInDown {
+              from {
+                  transform: translateY(-20px);
+                  opacity: 0;
+              }
+              to {
+                  transform: translateY(0);
+                  opacity: 1;
+              }
+          }
+          .form-box {
+              margin-top: 50px;
+          }
+  
+          .form-box input,
+          .form-box textarea,
+          .form-box button {
+              margin-bottom: 20px;
+              width: 100%;
+              padding: 10px;
+              font-size: 16px;
+          }
+  
+          .form-box button {
+              background-color: #333;
+              color: #fff;
+              cursor: pointer;
+          }
+          #iq5bf {
+    display: none;
+  }
+  /* Add these styles for images */
+.images-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-left,
+.image-right {
+ 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-left:hover,
+.image-right:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.table1 img,
+.image-container1 {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.table1 {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+      </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <div id="results"></div>
+            <img src="../images/logo.png" class="logo">
+            <ul>
+                <li><a href="../index.html">ACASĂ</a></li>
+                <li><a href="../index.html">DESPRE</a></li>
+                <li><a href="#">PROIECTE</a></li>
+                <li><a href="partner.html">PARTENERI</a></li>
+                <li><a href="contacte.html">CONTACTE</a></li>
+            </ul>
+            <!-- Pictograma pentru meniul Burger -->
+            <div class="burger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    
+
+            
+    
+
+
+
+    
+
+
+    <div class="landing_page">
+        <div class="responsive-container-block big-container">
+          <img class="bg-img">
+          <div class="responsive-container-block container">
+            <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 left-one bgcul">
+              <div class="form-box">
+                <section>
+
+                        <div class="loc">
+                            <h2 class="centered-texts">1. Proiectul „Promovarea Educației estetice și valorificarea tezaurului
+                                cultural-autohton”
+                            </h2>
+                            <p>
+                                <h3 class=" bold">Perioadă de implementare:</h3> <p>Februarie-Noiembrie 2017 <br> <br</p>
+                                <h3> Finanțator:</h3> <P> Fundația Soros-Moldova/Departamentul Buna Guvernare și Programul de
+                                Spriginire a Educației al Fundațiilor pentru o Societate Deschisă prin
+                                intermediul Asociației pentru Dezvoltare și Promovare Socio-Economică
+                                „CATALACTICA”, filiala RM. <br> <br></P>
+                                <h3>Scop:</h3> <p> Crearea oportunităților necesare pentru valorificarea tezaurului cultural autohton,
+                                relevarea
+                                performanțelor artistice și promovarea educației estetice în răndul tinerilor și maturilor din
+                                comunitate.</p>
+            
+                                <h1 class="padd centered-texts">Obiective</h1>
+                            <ul>
+                                <h4 class="padd">Crearea condițiilor material pentru valorificarea tezaurului cultural autohton,
+                                    dezvoltarea abilităților artistice și promovarea educației estetice în comunitate; </h4>
+                                <h4 class="padd">Educarea gustului esthetic în domeniul portului popular și crearea Centrului de educație
+                                    estetică și promovare a portului popular (CEE PPP)</h4>
+                                <h4 class="padd"li>Crearea și promovarea portului popular în comunitate; </h4>
+                                <h4 class="padd">Permanentizarea promovării valorilor portului popular și motivarea membrilor comunității de a
+                                    active pe termen lung în acest domeniu;</h4>
+                            </ul>
+                            <h3 class="pat">Principalele activități implementate:</h3>
+                            <li>Achiziționarea și instalarea echipamentului;</li>
+                            <li>Studierea simbolismului portului popular în cadrul șezătorilor din incinta Muzeului Național de
+                                Etnografie și Istorie Naturală în din Chișinău;</li>
+                            <li>Cursuri de instruire a tinerilor și maturilor în domeniul confecționării articolelor de port popular
+                                în stil național;</li>
+                            <li>Crearea Centrului de educație estetică și promovare a portului popular
+                                (CEE PPP);</li>
+                            <li>Culegerea și cercetarea motivelor ornamentale de pe articolele de port popular din comunitate;</li>
+                            <li>Crearea articolelor specifice portului popular în comunitate;</li>
+                            <li>„Satul meu și valorile culturale” </li>
+                            <br><br>
+                            <b><i> REZULTATE ȘI PRODUSE:</i></b>
+                            <li>Crearea condițiilor optime de ordin material și spiritual pentru valorificarea tezaurului cultural
+                                autohton, cultivarea aptitudinilor estetice și creatoare a 24 de tineri și 16 maturi.</li>
+                            <li>Dotarea sălii Centrului de educație estetică și promovare a portului popular cu trei mașini de cusut
+                                și materie primă pentru crearea articolelor de port popular.</li>
+                            <li>Formarea a trei cercuri pe interese: două cercuri pentru tineri și un cerc pentru adulți.</li>
+                            <li>Instruirea a 40 de persoane în vederea promovării educației estetice, valorificării tezaurului
+                                cultural autohton, confecționării costumelor naționale cu elemente ornamentale selectate din
+                                comunitate.</li>
+                            </p>
+            
+                            <div class="images-container">
+                                <img src="../images/5.jpg" class="hover-zoom image-right adapt" alt="Image 1">
+                                <img src="../images/4.jpg" class="hover-zoom image-left adapt" alt="Image 2">
+                              </div>
+                        </div>
+            
+                        <div class="loc">
+                            <h2 >2. Proiectul „Comunicarea prin tradiții populare: menire educațională și angajament
+                                continuu al actorilor comunitari”
+                            </h2>
+            
+                            <p>
+                                <h3>Perioadă de implementare:</h3> <p> Mai-Noiembrie 2019 <br> <br></p>
+                                <h3> Finanțator:</h3> <p>Fundația Soros-Moldova/Departamentul Buna Guvernare și Programul de
+                                Spriginire a Educației al Fundațiilor pentru o Societate Deschisă prin intermediul Asociației
+                                pentru Dezvoltare și Promovare Socio-Economică ,,CATALACTICA”, filiala RM. <br> <br></p> 
+                                <h3>Scop:</h3> <p>Valorificarea obiceiurilor și tradițiilor populare din
+                                comunitate în respectarea şi promovarea acestora, prin
+                                modernizarea comunicării dintre generaţii în bază de folclor.</p> 
+            
+            
+                                <br> <h1 class="padd centered-texts">Obiective</h1>
+                            <ul>
+                                <h4 class="padd">Dezvoltarea abilităților de utilizare a tehnologiilor moderne de comunicare la 50 de copii,
+                                    tineri și adulți, pentru promovarea tradițiilor comunitare; </h4>
+                                <h4 class="padd">Crearea cercului educațional Școala generațiilor, în scopul valorificării exemplelor
+                                    pozitive, a tradițiilor și datinilor locale şi a asigurăii comunicării dintre generaţii.
+                                </h4>
+                                <h4 class="padd">Elaborarea resurselor cu caracter educational pentru păstrarea şi promovarea tradiţiilor
+                                    locale. </h4>
+            
+                            </ul>
+                            <h3 class="padd">Principalele activități implementate:</h3>
+                            <li>Comunicarea prin dezvoltarea competențelor TIC</li>
+                            <li>Studierea metodelor de comunicare utilizând echipamentul IT al bibliotecii publice locale;</li>
+                            <li>Ateliere de formare a abilităților de utilizare a tehnologiilor moderne de comunicare
+                                utilizarea instrumentelor de procesare a informației (audio, video, imagini, text,utilizândechipamentul TI al bibliotecii publice locale</li>
+                            <li>Călătorim și învățăm „Excursie la Muzeul Naţional de Etnografie şi Istorie Naturală din Chișinău”
+                            </li>
+                            <li>Crearea cercului educațional „Școala generațiilor”</li>
+                            <li>Organizarea și desfășurarea festivalului local „Festivalul cireșelor” </li>
+                            <li>Elaborarea resurselor cu caracter educational pentru păstrarea şi promovarea tradiţiilor locale</li>
+                            <br><br>
+                            <b><i> REZULTATE ȘI PRODUSE:</i></b>
+                            <li> Ateliere de formare a abilităților de utilizare a TIC-ului;</li>
+                            <li> Excursie la Muzeul Naţional de Etnografie şi Istorie Naturală din Chișinău ;</li>
+                            <li> Un cerc educațional „Școala generațiilor”;</li>
+                            <li> Festivalul cireșelor - prima ediție;</li>
+                            <li> Expozitii cu diverse genuri de artă;</li>
+                            <li> Patru materiale informative despre proiect şi activităţile sale;</li>
+                            <li> Un filmuleț Power Point cu bune practici și secvențe de la activități;</li>
+                            <li> Postări pe rețeaua de socializare, pagina Facebook;</li>
+                            <li> Un studiu de iniţiere pentru crearea muzeului comunității;</li>
+                            <li> 58 copii, tineri și adulți implicați în activități de promovare a tradițiilor și obiceiurilor
+                                locale;</li>
+                            <li> Un panou cu fotografii de la activităţi;</li>
+                            <li> „Tradiții și obiceiuri la sărbătorile de iarnă”</li>
+                            </p>
+            
+                            <div class="images-container">
+                                <img src="../images/7.jpg" class="hover-zoom image-right adapt" alt="Image 1">
+                                <img src="../images/9.jpg" class="hover-zoom image-left adapt" alt="Image 2">
+                              </div>
+                            <div class="loc">
+                                <h2 class="centered-texts">3. Proiectul ”Un Internet mai sigur pentru copii!”
+                                </h2>
+            
+                                <p>
+                                    <h3>Perioadă de implementare:</h3><p> Martie-Decembrie 2020 <br> <br></p>
+                                    <h3> Finanțator:</h3> <p>Fundația Soros-Moldova/Departamentul Buna Guvernare și Programul de
+                                    Spriginire a Educației al Fundațiilor pentru o Societate Deschisă prin intermediul Asociației
+                                    pentru Dezvoltare și Promovare Socio-Economică „CATALACTICA”, filiala RM.</p> 
+            
+                                    <br> <br>
+                                    <h3>Scop:</h3> <p> Promovarea serviciilor de informare, consigliere privind situaţiile neplăcute,
+                                    dăunătoare şi ilegale întâlnite de către copii în mediul online.</p>
+            
+            
+                                    <h1 class="padd centered-texts">Obiective</h1>
+                                <ul>
+                                    <h4 class="padd">Sporirea culturii digitale a 160 copii cu vârsta de 7-11 ani (dintre care 11 copii cu
+                                        cerințe educaționale speciale) și a părinților acestora din comunitatea Fîrlădeni în
+                                        promovarea unu icomportament sigur online; </h4>
+                                    <h4 class="padd">Informarea părților aflate în contact direct cu copiii de vârsta 7-11 ani despre resursele
+                                        și uneltele necesare pentru crearea unui mediu mai sigur şi mai responsabil pe Internet;
+                                    </h4>
+                                    <h4 class="padd">Capacitarea a 15 adulți în asigurarea comunicării intra-și inter-sectoriale pentru o
+                                        colaborare în vederea promovării siguranței copilului pe internet; </h4>
+                                </ul>
+                                <h3 class="padd">Principalele activități implementate:</h3>
+                                <li>„E important să știu. Mediul online șiutilizatorii”;</li>
+                                <li>„Cyberbullying sauhărțuireaînmediul online”;</li>
+                                <li>„Internetul în viziunea mea”,</li>
+                                <li>„Programele de control parental-o posibilitate de a-ți proteja copilul online”;</li>
+                                <li>„Navigare sigură şi cale deschisă spre noi experienţe!”;</li>
+                                <li>„Să navigăm în siguranță pe Internet”; </li>
+                                <li>„Informat, deci protejat”, </li>
+                                <br><br>
+                                <b><i> REZULTATE ȘI PRODUSE:</i></b>
+                                <br><br>
+                                <b> Rezultate cantitative</b>
+                                <li>160 copii(11copii cu cerințe educaționale speciale)și 50 părinții informați despre
+                                    oportunitățile și riscurile utilizării Internetului. </li>
+                                <li> 40 părinți antrenați în utilizarea instrumentelor de control parental.</li>
+                                <li> 15 adulți promovează comunicarea intra-,inter-sectorială </li>
+                                <b>Rezultate calitative</b>
+                                <li>Membri ai comunității informați și antrenați în promovarea unui comporatment sigur online. </li>
+                                
+                           </p>
+            
+                           <div class="images-container">
+                            <img src="../images/13.jpg" class="hover-zoom image-right adapt" alt="Image 1">
+                            <img src="../images/14.jpg" class="hover-zoom image-left adapt" alt="Image 2">
+                          </div>
+                            </div>
+            
+                    </section>
+                
+                </div>
+       
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+        </section>
+        
+        
+        </section>
+    </div>
+</div>  
+                </div>
+                        </div>
+<footer class="footer">
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="../index.html">ACASA</a></li>
+      <li class="menu__item"><a class="menu__link" href="../index.html">DESPRE</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">PROIECTE</a></li>
+      <li class="menu__item"><a class="menu__link" href="./partner.html">PARTENERI</a></li>
+      <li class="menu__item"><a class="menu__link" href="./contacte.html">CONTACTE</a></li>
+    </ul>
+    <p>&copy;2024 MOȘTENIRE CREATIVĂ | Firladeni</p>
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.navbar ul');
+        menu.classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+

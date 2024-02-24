@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/free-icon-moldova-5204752.png"/>
+    <title>Arta tradițională</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <style>
+        /* mobile style */
+    
+        @media screen and (max-width: 767px) {
+        @keyframes fadeInFromTop {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+    
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+    
+        .navbar ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: #3333331c;
+          z-index: 1000;
+          animation: fadeInFromTop 0.5s ease-out;
+          display: none; /*menu */
+        }
+    
+        .navbar ul.show {
+          display: flex;
+        }
+    
+       }
+      </style>
+    
+      <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+          }
+      
+          /* stil gps */
+          .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            opacity: 0; /* 0pacitatea  */
+            animation: fadeInDown 1.5s ease-out forwards;
+          }
+      
+          .navbar .logo {
+            display: block;
+            cursor: pointer;
+          }
+      
+          .navbar ul {
+            list-style: none;
+            display: flex;
+          }
+      
+          .navbar ul li {
+            margin: 0 20px;
+          }
+      
+          .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+          }
+      
+          /* stil pk */
+          @media screen and (min-width: 768px) {
+            .burger-menu {
+              display: none;
+            }
+      
+            .navbar ul {
+              display: flex;
+            }
+          }
+      
+          /* moblie 767 pixl */
+          @media screen and (max-width: 767px) {
+            .navbar ul {
+              display: none;
+              flex-direction: column;
+              position: absolute;
+              top: 70px;
+              left: 0;
+              width: 100%;
+              background-color: #33333383;
+              z-index: 1000;
+            }
+            .footer {
+  background-color: #db0e0e;
+  color: #fff;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Это заставляет футер не сжиматься, когда контент увеличивается */
+  top: 55vh;
+}
+
+            .navbar ul.show {
+              display: flex;
+            }
+      
+            .navbar ul li {
+              margin: 10px 0;
+            }
+      
+            .burger-menu {
+              display: block;
+              cursor: pointer;
+            }
+      
+            .burger-menu .bar {
+              width: 25px;
+              height: 3px;
+              background-color: #fff;
+              margin: 6px 0;
+              
+            }
+            .banner {
+      width: 100%;
+      height: 250vh;
+      background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/IMG-7516062d0682f49db0e78a47630ae593-V.webp);
+      background-size: cover;
+      background-position: center;
+    
+    }
+          }
+      
+          /* benner */
+          .banner {
+            position: relative;
+            opacity: 0; /* opacitatea */
+            animation: fadeInUp 1.5s ease-out forwards;
+          }
+      
+          .content {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+          }
+      
+          .content h1, .content p, .content button {
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+            animation-delay: 0.5s; 
+          }
+      
+          .content h1 {
+            font-size: 40px;
+            margin-top: 40px;
+          }
+      
+          .content p {
+            margin: 20px auto;
+            font-weight: 100;
+            line-height: 25px;
+          }
+  
+          /* footer */
+ 
+  
+          
+          @keyframes fadeInUp {
+              from {
+                  transform: translateY(20px);
+                  opacity: 0;
+              }
+              to {
+                  transform: translateY(0);
+                  opacity: 1;
+              }
+          }
+  
+          @keyframes fadeInDown {
+              from {
+                  transform: translateY(-20px);
+                  opacity: 0;
+              }
+              to {
+                  transform: translateY(0);
+                  opacity: 1;
+              }
+          }
+          .form-box {
+              margin-top: 50px;
+          }
+  
+          .form-box input,
+          .form-box textarea,
+          .form-box button {
+              margin-bottom: 20px;
+              width: 100%;
+              padding: 10px;
+              font-size: 16px;
+          }
+  
+          .form-box button {
+              background-color: #333;
+              color: #fff;
+              cursor: pointer;
+          }
+          #iq5bf {
+    display: none;
+  }
+  /* Add these styles for images */
+.images-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-left,
+.image-right {
+ 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-left:hover,
+.image-right:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.table1 img,
+.image-container1 {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.table1 {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+      </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <div id="results"></div>
+            <img src="../images/logo.png" class="logo">
+            <ul>
+                <li><a href="../index.html">ACASĂ</a></li>
+                <li><a href="../index.html">DESPRE</a></li>
+                <li><a href="proiecte.html">PROIECTE</a></li>
+                <li><a href="#">PARTENERI</a></li>
+                <li><a href="contacte.html">CONTACTE</a></li>
+            </ul>
+            <!-- Pictograma pentru meniul Burger -->
+            <div class="burger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    
+
+            
+    
+
+
+
+    
+
+
+    <div class="landing_page">
+        <div class="responsive-container-block big-container">
+          <img class="bg-img">
+          <div class="responsive-container-block container">
+            <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 left-one bgcul">
+              <div class="form-box">
+                <section>
+
+                        <div class="loc">
+                            <h1 class="centered-texts">Ansamblul folcloric "Datina"
+                            </h1>
+                            <p>
+                               <h3 class="centered-textsss">Conducător : Cucovici Antonina </h3>
+                               <h3 class="centered-textsss">Acompaniment : Ceban Larisa</h3>
+            
+                                <h3 class="centered-textsss">Colectivul ansamblului folcloric ,,DATINA” a fost înființat în primăvara anului 2017, în cadrul implementării proiectului ,,Comunicarea prin tradiții populare...”. Ansamblul folcloric ,,DATINA” a fost menționat cu diplome de merit pentru participare activă în promovarea tradițiilor naționale la festivalurile locale și raionale, precum:</h3>
+                            </ul>
+                            <li>Festivalul cu genericul „PREACURATĂ-I FAȚA P INII...” Ediția a IV – 2018, s. Taraclia, r-l Căușeni.</li>
+                            <li>1 decembrie 2018, Ziua națională a României; orașul Balan județul Harghita, România.</li>
+                            <li>Festivalul cu genericul „PREACURATĂ-I FAȚA P INII...” Ediția a VII – 2022, s. Taraclia, r-l Căușeni.</li>
+                            <li>Festivalul cu genericul „TOAMNA DE CHIHLIMBAR”, Căușeni 2022.</li>
+                            <li>Ansamblul folkloric Datina în parteneriat cu IPÎ L.T., „M.Sadoveanu”, la o activitate unde a avut loc Campania
+                            „te vezi realizat acasă” implementată de Atelierul de producție video și educație media TeVezi în cadrul
+                            proiectului „Joboteca” program pilot de pregătire a tinerilor din Moldova pentru piața muncii 2021-2024.</li>
+                            <li>Implementat de Terre des homes România și Terre des homes Moldova în parteneriat cu MEC al RM și finanțat de UE.
+                            Semn de gratitudine colectivul ansamblului folcloric „DATINA” din satul Fîrlădeni, pentru colaborarea sinceră
+                            manifestată constant pe parcursul anilor, cultivând obiceiurile și tradițiile naționale prin participarea la
+                            festivalul cântecului pascal „HRISTOS A ÎNVIAT”, 18 aprilie 2023, Căușeni.</li>
+                            <li> Festivalul „La seceriș”, satul Cîrnățeni raionul Căușeni, 30 iulie 2023.</li>
+                            <li> Festivalul cu genericul „TOAMNA DE CHIHLIMBAR”, Căușeni 2023.</li>
+            
+                            <div class="images-container">
+                                <img src="../images/IMG-343b189baf42a0ca002b08a7fb6fae3f-V.jpg" class="hover-zoom image-right adapt" alt="Image 1">
+                                <img src="../images/IMG-0b9aa6078563851c9c1249dbbdf77574-V.jpg" class="hover-zoom image-left adapt" alt="Image 2">
+                              </div>
+                        </div>
+            
+        <h3 class="centered-texts">Festivalul cu genericul
+            „TOAMNA DE CHIHLIMBAR”, Căușeni 2022.</h3>
+ 
+            <center> <iframe width="771" height="434" src="https://www.youtube.com/embed/ZO5piU8zA5k" title="Te vezi realizat acasă! Fîrlădeni, acolo unde offline-urile tinerilor sunt șezători cu tradiții." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </center>  
+                    </section>
+                
+                </div>
+       
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+        </section>
+        
+        
+        </section>
+    </div>
+</div>  
+                </div>
+                        </div>
+<footer class="footer">
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+    </ul>
+    <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="../index.html">ACASA</a></li>
+        <li class="menu__item"><a class="menu__link" href="../index.html">DESPRE</a></li>
+        <li class="menu__item"><a class="menu__link" href="./proiecte.html">PROIECTE</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">PARTENERI</a></li>
+        <li class="menu__item"><a class="menu__link" href="./contacte.html">CONTACTE</a></li>
+    </ul>
+    <p>&copy;2024 MOȘTENIRE CREATIVĂ | Firladeni</p>
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.navbar ul');
+        menu.classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
